@@ -4,6 +4,7 @@ import useAuth from '../../hooks/useAuth'
 import { FcGoogle } from 'react-icons/fc'
 import { TbFidgetSpinner } from 'react-icons/tb'
 import LoadingSpinner from '../../components/shared/LoadingSpinner'
+import { saveOrUpdateUser } from '../../../utils'
 
 const Login = () => {
   const { signIn, signInWithGoogle, loading, user, setLoading } = useAuth()
@@ -24,7 +25,13 @@ const Login = () => {
 
     try {
       //User Login
-      await signIn(email, password)
+     const {user} =await signIn(email, password)
+       await saveOrUpdateUser({
+        name: user?.displayName,
+        email: user?.email,
+        image: user?.photoURL,
+      })
+
 
       navigate(from, { replace: true })
       toast.success('Login Successful')
@@ -38,7 +45,15 @@ const Login = () => {
   const handleGoogleSignIn = async () => {
     try {
       //User Registration using google
-      await signInWithGoogle()
+    const {user} = await signInWithGoogle()
+
+       await saveOrUpdateUser({
+              name: user?.displayName,
+              email: user?.email,
+              image: user?.photoURL,
+            })
+      
+
       navigate(from, { replace: true })
       toast.success('Login Successful')
     } catch (err) {
@@ -48,7 +63,10 @@ const Login = () => {
     }
   }
   return (
-    <div className='flex justify-center items-center min-h-screen bg-white'>
+    
+    <div className='flex bg-gradient-to-br from-primary/20 via-secondary/20 to-pink-100
+ from-primary/20 via-secondary/20 to-pink-100
+ justify-center items-center min-h-screen bg-white'>
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl font-bold'>Log In</h1>
@@ -73,7 +91,7 @@ const Login = () => {
                 id='email'
                 required
                 placeholder='Enter Your Email Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-lime-500 bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-primary bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
               />
             </div>
@@ -90,7 +108,7 @@ const Login = () => {
                 id='password'
                 required
                 placeholder='*******'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-lime-500 bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-primary bg-gray-200 text-gray-900'
               />
             </div>
           </div>
@@ -98,7 +116,8 @@ const Login = () => {
           <div>
             <button
               type='submit'
-              className='bg-lime-500 w-full rounded-md py-3 text-white'
+              className='bg-primary hover:bg-primary/90
+ w-full rounded-md py-3 text-white'
             >
               {loading ? (
                 <TbFidgetSpinner className='animate-spin m-auto' />
@@ -109,7 +128,7 @@ const Login = () => {
           </div>
         </form>
         <div className='space-y-1'>
-          <button className='text-xs hover:underline hover:text-lime-500 text-gray-400 cursor-pointer'>
+          <button className='text-xs hover:underline hover:text-primary text-gray-400 cursor-pointer'>
             Forgot password?
           </button>
         </div>
@@ -133,7 +152,7 @@ const Login = () => {
           <Link
             state={from}
             to='/signup'
-            className='hover:underline hover:text-lime-500 text-gray-600'
+            className='hover:underline hover:text-primary text-gray-600'
           >
             Sign up
           </Link>

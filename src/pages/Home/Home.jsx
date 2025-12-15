@@ -1,8 +1,9 @@
+import Services from "../../components/home/services"
 
 const Home = () => {
   return (
-    <div>
-     Home
+    <div className="">
+     <Services/>
     </div>
   )
 }
