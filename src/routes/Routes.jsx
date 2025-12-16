@@ -8,6 +8,7 @@ import DashboardLayout from '../layouts/DashboardLayout'
 import MainLayout from '../layouts/MainLayout'
 
 import { createBrowserRouter } from 'react-router'
+import ServicesPage from '../pages/ServicesPage'
 
 export const router = createBrowserRouter([
   {
@@ -19,10 +20,10 @@ export const router = createBrowserRouter([
         path: '/',
         element: <Home />,
       },
-      // {
-      //   path: '/plant/:id',
-      //   element: <PlantDetails />,
-      // },
+      {
+        path: '/services',
+        element: <ServicesPage />,
+      },
     ],
   },
   { path: '/login', element: <Login /> },
