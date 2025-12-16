@@ -9,6 +9,9 @@ import MainLayout from '../layouts/MainLayout'
 
 import { createBrowserRouter } from 'react-router'
 import ServicesPage from '../pages/ServicesPage'
+import ServiceDetails from '../pages/ServiceDetails'
+import About from '../pages/About'
+import Contact from '../pages/Contact'
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +27,19 @@ export const router = createBrowserRouter([
         path: '/services',
         element: <ServicesPage />,
       },
+      {
+        path: '/services/:id',
+        element: <ServiceDetails />
+      },
+      {
+        path: '/about',
+        element: <About />
+      },
+      {
+        path: '/contact',
+        element: <Contact />
+      },
+
     ],
   },
   { path: '/login', element: <Login /> },

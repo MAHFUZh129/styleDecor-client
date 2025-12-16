@@ -13,7 +13,7 @@ const ServicesPage = () => {
   const { data: services = [], isLoading } = useQuery({
     queryKey: ["services"],
     queryFn: async () => {
-      const res = await axios(`${import.meta.env.VITE_API_URL}/services`);
+      const res = await axios(`${import.meta.env.VITE_API_URL}/services-all`);
       return res.data;
     },
   });

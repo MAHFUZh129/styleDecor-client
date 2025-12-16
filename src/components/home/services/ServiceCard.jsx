@@ -1,8 +1,9 @@
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router";
 
 const ServiceCard = ({ service }) => {
   const {
-    name,
+    name, _id,
     price,
     image,
     shortDescription,
@@ -87,16 +88,20 @@ const ServiceCard = ({ service }) => {
         </p>
 
         {/* Button */}
-        <button
-          className="
+        <Link to={`/services/${_id}`}>
+          <button
+
+            className="
             mt-2 w-full py-2 rounded-xl
             bg-gradient-to-r from-primary to-secondary
             text-white text-sm font-semibold
             hover:opacity-90 transition
           "
-        >
-          View Details
-        </button>
+          >
+            View Details
+          </button >
+        </Link>
+
       </div>
     </div>
   );

@@ -52,7 +52,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        
+
         {/* Desktop Menu */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-5 font-medium text-base">
@@ -71,15 +71,23 @@ const Navbar = () => {
           </ul>
         </div>
 
-          {/* login */}
+        {/* login */}
         <div className="navbar-end gap-2">
           {!user ? (
+            <>
             <Link
               to="/login"
               className="btn btn-primary btn-sm sm:btn-md rounded-full"
             >
               Login
             </Link>
+            <Link
+              to="/signup"
+              className="btn btn-secondary  btn-sm sm:btn-md rounded-full"
+            >
+              Sign Up
+            </Link>
+            </>
           ) : (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="cursor-pointer">
