@@ -9,7 +9,7 @@ const Home = () => {
       <Hero/>
      <Services/>
      <TopDecorators/>
-     {/* <ServiceCoverageMap/> */}
+     <ServiceCoverageMap/>
     </div>
   )
 }

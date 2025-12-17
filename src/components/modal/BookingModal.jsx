@@ -1,7 +1,38 @@
 import React from 'react';
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
+import axios from 'axios';
+import useAuth from '../../hooks/useAuth';
 
 const BookingModal = ({closeModal,openModal,service}) => {
+
+    const {user}=useAuth()
+    const { _id, name, category, price,serviceMode, description, image,  } = service
+
+
+    const handlePayment = async () => {
+    const paymentInfo = {
+      serviceId: _id,
+      name,
+      category,
+      price,
+      description,
+      image,
+      quantity: 1,
+      serviceMode,
+      customer: {
+        name: user?.displayName,
+        email: user?.email,
+        image: user?.photoURL,
+      },
+     
+    }
+    const { data } = await axios.post(
+      `${import.meta.env.VITE_API_URL}/create-checkout-session`,
+      paymentInfo
+    )
+    window.location.href = data.url
+  }
+
     return (
         <div>
             <Dialog
@@ -41,7 +72,7 @@ const BookingModal = ({closeModal,openModal,service}) => {
 
                             <div className='flex mt-2 justify-around'>
                                 <button
-                                    
+                                    onClick={handlePayment}
                                     type='button'
                                     className='cursor-pointer inline-flex justify-center rounded-md border border-transparent bg-green-100 px-4 py-2 text-sm font-medium text-green-900 hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2'
                                 >
