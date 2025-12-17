@@ -12,6 +12,8 @@ import ServicesPage from '../pages/ServicesPage'
 import ServiceDetails from '../pages/ServiceDetails'
 import About from '../pages/About'
 import Contact from '../pages/Contact'
+import MyBookings from '../pages/user/MyBookings'
+import PaymentHistory from '../pages/user/PaymentHistory'
 
 export const router = createBrowserRouter([
   {
@@ -60,22 +62,23 @@ export const router = createBrowserRouter([
       //     </PrivateRoute>
       //   ),
       // },
-      // {
-      //   path: 'add-plant',
-      //   element: (
-      //     <PrivateRoute>
-      //       <AddPlant />
-      //     </PrivateRoute>
-      //   ),
-      // },
-      // {
-      //   path: 'my-inventory',
-      //   element: (
-      //     <PrivateRoute>
-      //       <MyInventory />
-      //     </PrivateRoute>
-      //   ),
-      // },
+      {
+        path: 'my-bookings',
+        element: (
+          <PrivateRoute>
+            <MyBookings />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'payment-history',
+        element: (
+          <PrivateRoute>
+            <PaymentHistory/>
+            
+          </PrivateRoute>
+        ),
+      },
       // {
       //   path: 'manage-users',
       //   element: (
