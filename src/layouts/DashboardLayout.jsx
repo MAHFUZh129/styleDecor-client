@@ -1,6 +1,8 @@
 import { Link, NavLink, Outlet } from "react-router";
 import { MdDashboard, MdEvent, MdLogout, MdOutlinePayment } from "react-icons/md";
 import { FaHome, FaUserCircle } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
+
 import useAuth from "../hooks/useAuth";
 import { useState } from "react";
 
@@ -20,10 +22,11 @@ const DashboardLayout = () => {
         <div className="p-4 border-b">
           <h2 className="text-2xl font-bold text-primary">StyleDecor</h2>
           <p className="text-sm text-gray-500">Dashboard</p>
-          <Link className="flex text-lg text-amber-700 font-bold mt-3 p-2 hover:bg-primary/10 items-center gap-2" to='/'>
+          <Link className="flex text-lg text-amber-700 font-bold mt-2 pl-2 hover:bg-primary/10 items-center gap-2" to='/'>
           <FaHome />
           Home
           </Link>
+          
         </div>
 
         <nav className="p-2 space-y-1">
@@ -42,6 +45,14 @@ const DashboardLayout = () => {
             <div  className='flex font-semibold items-center gap-3 p-3 rounded-lg' >
               <MdOutlinePayment />
               Payment History
+            </div>
+          </NavLink>
+          <NavLink to="profile"
+           className={isActive}
+           >
+            <div  className='flex font-semibold items-center gap-3 p-3 rounded-lg' >
+              <CgProfile />
+              My Profile
             </div>
           </NavLink>
 

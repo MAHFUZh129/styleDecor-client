@@ -14,6 +14,8 @@ import About from '../pages/About'
 import Contact from '../pages/Contact'
 import MyBookings from '../pages/user/MyBookings'
 import PaymentHistory from '../pages/user/PaymentHistory'
+import PaymentSuccess from '../pages/payment/PaymentSuccess'
+import Profile from '../pages/Profile'
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +42,10 @@ export const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />
+      },
+      {
+        path: '/payment-success',
+        element: <PaymentSuccess />,
       },
 
     ],
@@ -79,22 +85,15 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      // {
-      //   path: 'manage-users',
-      //   element: (
-      //     <PrivateRoute>
-      //       <ManageUsers />
-      //     </PrivateRoute>
-      //   ),
-      // },
-      // {
-      //   path: 'profile',
-      //   element: (
-      //     <PrivateRoute>
-      //       <Profile />
-      //     </PrivateRoute>
-      //   ),
-      // },
+      
+      {
+        path: 'profile',
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
+      },
       // {
       //   path: 'my-orders',
       //   element: (
