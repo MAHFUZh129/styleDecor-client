@@ -23,7 +23,7 @@ const PaymentSuccess = () => {
           Thank you for your bookings. Your bookings being processed.
         </p>
         <Link
-        to="my-bookings"
+        to="/dashboard/my-bookings"
           
           className='inline-block bg-gradient-to-r from-primary to-secondary text-white font-semibold py-2 px-4 rounded hover:bg-lime-600 transition duration-300'
         >

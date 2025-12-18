@@ -7,7 +7,7 @@ import BookingTable from '../../components/Table/BookingTable'
 const MyBookings = () => {
     const { user } = useAuth()
     const axiosSecure = useAxiosSecure()
-    const { data: bookings = [], isLoading } = useQuery({
+    const { data: bookings = [], isLoading,refetch } = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: async () => {
             const result = await axiosSecure(`/my-bookings`)
@@ -82,7 +82,7 @@ const MyBookings = () => {
                                 </thead>
                                 <tbody>
                                     {bookings.map(booking => (
-                                        <BookingTable key={booking._id} booking={booking} />
+                                        <BookingTable refetch={refetch} key={booking._id} booking={booking} />
                                     ))}
                                     {bookings.length === 0 && (
                                         <tr>

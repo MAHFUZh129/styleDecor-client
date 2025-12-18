@@ -2,12 +2,13 @@ import { Link, NavLink, Outlet } from "react-router";
 import { MdDashboard, MdEvent, MdLogout, MdOutlinePayment } from "react-icons/md";
 import { FaHome, FaUserCircle } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
-
 import useAuth from "../hooks/useAuth";
-import { useState } from "react";
+import useRole from "../hooks/useRole";
 
 const DashboardLayout = () => {
   const { user, logOut } = useAuth();
+  const [role] = useRole()
+  console.log(role)
 
   const isActive = ({ isActive }) =>
   `flex items-center gap-3 rounded-md 
@@ -30,8 +31,9 @@ const DashboardLayout = () => {
         </div>
 
         <nav className="p-2 space-y-1">
-          
-          <NavLink to="my-bookings"
+          {
+            role==='user' &&<>
+            <NavLink to="my-bookings"
            className={isActive}
            >
             <div  className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
@@ -47,6 +49,11 @@ const DashboardLayout = () => {
               Payment History
             </div>
           </NavLink>
+            </>
+
+          }
+          
+          
           <NavLink to="profile"
            className={isActive}
            >
