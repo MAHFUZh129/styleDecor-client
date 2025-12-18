@@ -1,6 +1,6 @@
 import { Link, NavLink, Outlet } from "react-router";
 import { MdDashboard, MdEvent, MdEventNote, MdLogout, MdOutlinePayment } from "react-icons/md";
-import { FaChartPie, FaHome, FaUserCircle } from "react-icons/fa";
+import { FaChartPie, FaCoins, FaHome, FaUserCircle } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import useAuth from "../hooks/useAuth";
 import useRole from "../hooks/useRole";
@@ -72,6 +72,14 @@ const DashboardLayout = () => {
                 <div className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
                   <MdEventNote />
                   Manage Bookings
+                </div>
+              </NavLink>
+               <NavLink to="manage-decorators"
+                className={isActive}
+              >
+                <div className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
+                  <FaCoins />
+                  Manage Decorators
                 </div>
               </NavLink>
              

@@ -19,6 +19,7 @@ import Profile from '../pages/Profile'
 import DashboardIndex from '../pages/DashboardIndex'
 import ManageBookings from '../pages/admin/ManageBookings'
 import AdminDashboardOverveiw from '../pages/admin/AdminDashboardOverveiw'
+import ManageDecorators from '../pages/admin/ManageDecorators'
 
 export const router = createBrowserRouter([
   {
@@ -110,6 +111,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AdminDashboardOverveiw />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'manage-decorators',
+        element: (
+          <PrivateRoute>
+            <ManageDecorators />
           </PrivateRoute>
         ),
       },
