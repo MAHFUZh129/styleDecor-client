@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import useAxiosSecure from '../../hooks/useAxiosSecure'
+import Swal from 'sweetalert2'
 
 const AssignDecoratorModal = ({ booking, closeModal, refetch }) => {
     const axiosSecure = useAxiosSecure()
@@ -21,6 +22,13 @@ const AssignDecoratorModal = ({ booking, closeModal, refetch }) => {
 
         refetch()
         closeModal()
+        Swal.fire({
+            title: 'Assigned',
+            text: `${decorator?.name} is assigned for decoration`,
+            icon: 'success',
+            timer: 2500,
+            showConfirmButton: false
+        })
     }
 
     return (
@@ -37,7 +45,7 @@ const AssignDecoratorModal = ({ booking, closeModal, refetch }) => {
                                 <th>Image</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                
+
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -54,10 +62,10 @@ const AssignDecoratorModal = ({ booking, closeModal, refetch }) => {
                                     </td>
                                     <td>{decorator.name}</td>
                                     <td className="text-sm">{decorator.email}</td>
-                                    
+
                                     <td>
                                         <button
-                                            
+
                                             onClick={() => handleAssign(decorator)}
                                             className="btn btn-xs btn-primary"
                                         >

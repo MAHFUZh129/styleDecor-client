@@ -17,12 +17,12 @@ const ManageDecorators = () => {
     const handleStatusChange = async (id, status) => {
         const result = await Swal.fire({
             title: 'Are you sure?',
-            text: 'You want to enable this decorator',
+            text: `You want to ${status === 'disabled' ? 'disable' : 'enable'} this decorator`,
+            confirmButtonText: status === 'disabled' ? 'Yes, Disable' : 'Yes, Enable',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#16a34a',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, Enable'
         })
         if (result.isConfirmed) {
             await axiosSecure.patch(`/admin/decorators/status/${id}`, {
@@ -32,10 +32,10 @@ const ManageDecorators = () => {
             refetch()
 
             Swal.fire({
-                title: 'Enabled!',
-                text: 'Decorator is now available',
+                title: `${status}`,
+                text:`Decorator is now ${status}`,
                 icon: 'success',
-                timer: 1500,
+                timer: 2500,
                 showConfirmButton: false
             })
         }
@@ -85,10 +85,10 @@ const ManageDecorators = () => {
                                 <td>
                                     <span
                                         className={`badge badge-outline ${decorator.status === 'available'
-                                                ? 'badge-success'
-                                                : decorator.status === 'assigned'
-                                                    ? 'badge-warning'
-                                                    : 'badge-error'
+                                            ? 'badge-success'
+                                            : decorator.status === 'assigned'
+                                                ? 'badge-warning'
+                                                : 'badge-error'
                                             }`}
                                     >
                                         {decorator.status}
