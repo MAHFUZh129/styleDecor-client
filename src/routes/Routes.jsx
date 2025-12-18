@@ -16,6 +16,9 @@ import MyBookings from '../pages/user/MyBookings'
 import PaymentHistory from '../pages/user/PaymentHistory'
 import PaymentSuccess from '../pages/payment/PaymentSuccess'
 import Profile from '../pages/Profile'
+import DashboardIndex from '../pages/DashboardIndex'
+import ManageBookings from '../pages/admin/ManageBookings'
+import AdminDashboardOverveiw from '../pages/admin/AdminDashboardOverveiw'
 
 export const router = createBrowserRouter([
   {
@@ -60,14 +63,14 @@ export const router = createBrowserRouter([
       </PrivateRoute>
     ),
     children: [
-      // {
-      //   index: true,
-      //   element: (
-      //     <PrivateRoute>
-      //       <Statistics />
-      //     </PrivateRoute>
-      //   ),
-      // },
+      {
+        index: true,
+        element: (
+          <PrivateRoute>
+            <DashboardIndex />
+          </PrivateRoute>
+        ),
+      },
       {
         path: 'my-bookings',
         element: (
@@ -94,18 +97,23 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      // {
-      //   path: 'my-orders',
-      //   element: (
-      //     <PrivateRoute>
-      //       <MyOrders />
-      //     </PrivateRoute>
-      //   ),
-      // },
-      // {
-      //   path: 'manage-orders',
-      //   element: <ManageOrders />,
-      // },
+      {
+        path: 'manage-bookings',
+        element: (
+          <PrivateRoute>
+            <ManageBookings />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'overview',
+        element: (
+          <PrivateRoute>
+            <AdminDashboardOverveiw />
+          </PrivateRoute>
+        ),
+      },
+      
     ],
   },
 ])

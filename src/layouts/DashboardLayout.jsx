@@ -1,6 +1,6 @@
 import { Link, NavLink, Outlet } from "react-router";
-import { MdDashboard, MdEvent, MdLogout, MdOutlinePayment } from "react-icons/md";
-import { FaHome, FaUserCircle } from "react-icons/fa";
+import { MdDashboard, MdEvent, MdEventNote, MdLogout, MdOutlinePayment } from "react-icons/md";
+import { FaChartPie, FaHome, FaUserCircle } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import useAuth from "../hooks/useAuth";
 import useRole from "../hooks/useRole";
@@ -11,7 +11,7 @@ const DashboardLayout = () => {
   console.log(role)
 
   const isActive = ({ isActive }) =>
-  `flex items-center gap-3 rounded-md 
+    `flex items-center gap-3 rounded-md 
    ${isActive ? "bg-secondary/90 text-white" : "hover:bg-primary/10"}`
 
 
@@ -24,40 +24,65 @@ const DashboardLayout = () => {
           <h2 className="text-2xl font-bold text-primary">StyleDecor</h2>
           <p className="text-sm text-gray-500">Dashboard</p>
           <Link className="flex text-lg text-amber-700 font-bold mt-2 pl-2 hover:bg-primary/10 items-center gap-2" to='/'>
-          <FaHome />
-          Home
+            <FaHome />
+            Home
           </Link>
-          
+
         </div>
 
         <nav className="p-2 space-y-1">
+          {/* user pages */}
           {
-            role==='user' &&<>
-            <NavLink to="my-bookings"
-           className={isActive}
-           >
-            <div  className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
-              <MdEvent />
-              My Bookings
-            </div>
-          </NavLink>
-          <NavLink to="payment-history"
-           className={isActive}
-           >
-            <div  className='flex font-semibold items-center gap-3 p-3 rounded-lg' >
-              <MdOutlinePayment />
-              Payment History
-            </div>
-          </NavLink>
+            role === 'user' && <>
+              <NavLink to="my-bookings"
+                className={isActive}
+              >
+                <div className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
+                  <MdEvent />
+                  My Bookings
+                </div>
+              </NavLink>
+              <NavLink to="payment-history"
+                className={isActive}
+              >
+                <div className='flex font-semibold items-center gap-3 p-3 rounded-lg' >
+                  <MdOutlinePayment />
+                  Payment History
+                </div>
+              </NavLink>
             </>
 
           }
-          
-          
+
+          {/* admin pages */}
+          {
+            role === 'admin' && <>
+             
+              <NavLink to="overview"
+                className={isActive}
+              >
+                <div className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
+                  <FaChartPie />
+                 Activities Overveiw
+                </div>
+              </NavLink>
+               <NavLink to="manage-bookings"
+                className={isActive}
+              >
+                <div className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
+                  <MdEventNote />
+                  Manage Bookings
+                </div>
+              </NavLink>
+             
+            </>
+
+          }
+
           <NavLink to="profile"
-           className={isActive}
-           >
-            <div  className='flex font-semibold items-center gap-3 p-3 rounded-lg' >
+            className={isActive}
+          >
+            <div className='flex font-semibold items-center gap-3 p-3 rounded-lg' >
               <CgProfile />
               My Profile
             </div>
