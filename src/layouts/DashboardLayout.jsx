@@ -1,7 +1,8 @@
 import { Link, NavLink, Outlet } from "react-router";
-import { MdDashboard, MdDesignServices, MdEvent, MdEventNote, MdLogout, MdOutlinePayment } from "react-icons/md";
+import { MdDashboard, MdDesignServices, MdEvent, MdEventNote, MdLogout, MdOutlineAssignmentTurnedIn, MdOutlinePayment } from "react-icons/md";
 import { FaChartPie, FaCoins, FaHome, FaHospitalUser, FaUserCircle } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
+import { SiAdminer } from "react-icons/si";
 import useAuth from "../hooks/useAuth";
 import useRole from "../hooks/useRole";
 
@@ -24,7 +25,7 @@ const DashboardLayout = () => {
           <h2 className="text-2xl font-bold text-primary">StyleDecor</h2>
           <p className="text-sm text-gray-500">Dashboard</p>
           <Link className="flex text-lg text-amber-700 font-bold mt-2 pl-2 hover:bg-primary/10 items-center gap-2" to='/'>
-            <FaHome />
+            <FaHome />decorator
             Home
           </Link>
 
@@ -54,19 +55,45 @@ const DashboardLayout = () => {
 
           }
 
+           {/* decorators pages */}
+
+          {
+            role === 'decorator' &&<>
+            <NavLink to="decorator-overview"
+                className={isActive}
+              >
+                <div className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
+                  <SiAdminer  />
+                  Overveiw
+                </div>
+              </NavLink>
+            <NavLink to="my-projects"
+                className={isActive}
+              >
+                <div className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
+                  <MdOutlineAssignmentTurnedIn/>
+
+                  My Assigned Projects
+                </div>
+              </NavLink>
+
+            </>
+          }
+
+
           {/* admin pages */}
           {
             role === 'admin' && <>
-             
+
               <NavLink to="overview"
                 className={isActive}
               >
                 <div className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
                   <FaChartPie />
-                 Activities Overveiw
+                  Activities Overveiw
                 </div>
               </NavLink>
-               <NavLink to="manage-bookings"
+              <NavLink to="manage-bookings"
                 className={isActive}
               >
                 <div className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
@@ -74,7 +101,7 @@ const DashboardLayout = () => {
                   Manage Bookings
                 </div>
               </NavLink>
-               <NavLink to="manage-decorators"
+              <NavLink to="manage-decorators"
                 className={isActive}
               >
                 <div className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
@@ -82,7 +109,7 @@ const DashboardLayout = () => {
                   Manage Decorators
                 </div>
               </NavLink>
-               <NavLink to="manage-services"
+              <NavLink to="manage-services"
                 className={isActive}
               >
                 <div className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
@@ -90,15 +117,15 @@ const DashboardLayout = () => {
                   Manage Services
                 </div>
               </NavLink>
-               <NavLink to="manage-users"
+              <NavLink to="manage-users"
                 className={isActive}
               >
                 <div className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
                   <FaHospitalUser />
-                 Manage Users 
+                  Manage Users
                 </div>
               </NavLink>
-             
+
             </>
 
           }

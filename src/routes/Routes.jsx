@@ -22,6 +22,8 @@ import AdminDashboardOverveiw from '../pages/admin/AdminDashboardOverveiw'
 import ManageDecorators from '../pages/admin/ManageDecorators'
 import ManageServices from '../pages/admin/ManageServices'
 import ManageUsers from '../pages/admin/ManageUsers'
+import DecoratorDashboardOverveiw from '../pages/decorator/DecoratorDashboardOverveiw'
+import MyAssignedProjects from '../pages/decorator/MyAssignedProjects'
 
 export const router = createBrowserRouter([
   {
@@ -117,6 +119,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
+        path: 'decorator-overview',
+        element: (
+          <PrivateRoute>
+            <DecoratorDashboardOverveiw />
+          </PrivateRoute>
+        ),
+      },
+      {
         path: 'manage-decorators',
         element: (
           <PrivateRoute>
@@ -137,6 +147,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <ManageUsers />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'my-projects',
+        element: (
+          <PrivateRoute>
+            <MyAssignedProjects />
           </PrivateRoute>
         ),
       },
