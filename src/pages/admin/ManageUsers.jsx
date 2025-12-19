@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import useAxiosSecure from '../../hooks/useAxiosSecure'
-import { FaUserShield, FaBan, FaTrash } from 'react-icons/fa'
+import { FaBan, FaTrash } from 'react-icons/fa'
 import Swal from 'sweetalert2'
 
 const ManageUsers = () => {
@@ -14,10 +14,10 @@ const ManageUsers = () => {
     },
   })
 
-  // change role
-  const handleRole = async (id, role) => {
+  // change role from dropdown
+  const handleRoleChange = async (id, newRole) => {
     const confirm = await Swal.fire({
-      title: `Make ${role}?`,
+      title: `Change role to "${newRole}"?`,
       icon: 'question',
       showCancelButton: true,
       confirmButtonText: 'Yes',
@@ -25,11 +25,15 @@ const ManageUsers = () => {
 
     if (!confirm.isConfirmed) return
 
-    await axiosSecure.patch(`/admin/users/role/${id}`, { role })
+    await axiosSecure.patch(`/admin/users/role/${id}`, {
+      role: newRole,
+    })
+
     refetch()
+    Swal.fire('Updated!', 'User role updated', 'success')
   }
 
-  // block user
+  // block / unblock
   const handleBlock = async (id, status) => {
     await axiosSecure.patch(`/admin/users/status/${id}`, { status })
     refetch()
@@ -45,7 +49,7 @@ const ManageUsers = () => {
         <table className="table table-zebra">
           <thead>
             <tr>
-              <th>Serial No.</th>
+              <th>#</th>
               <th>Name</th>
               <th>Email</th>
               <th>Role</th>
@@ -59,14 +63,24 @@ const ManageUsers = () => {
               <tr key={user._id}>
                 <td>{i + 1}</td>
                 <td>{user.name}</td>
-                <td>{user.email}</td>
+                <td className="break-all">{user.email}</td>
 
+                {/* 🔽 ROLE DROPDOWN */}
                 <td>
-                  <span className="badge badge-outline capitalize">
-                    {user.role}
-                  </span>
+                  <select
+                    className="select select-bordered select-sm"
+                    value={user.role}
+                    onChange={(e) =>
+                      handleRoleChange(user._id, e.target.value)
+                    }
+                  >
+                    <option value="user">User</option>
+                    <option value="decorator">Decorator</option>
+                    <option value="admin">Admin</option>
+                  </select>
                 </td>
 
+                {/* STATUS */}
                 <td>
                   <span
                     className={`badge ${
@@ -79,14 +93,8 @@ const ManageUsers = () => {
                   </span>
                 </td>
 
+                {/* ACTIONS */}
                 <td className="flex gap-2">
-                  <button
-                    onClick={() => handleRole(user._id, 'admin')}
-                    className="btn btn-xs btn-info"
-                  >
-                    <FaUserShield />
-                  </button>
-
                   <button
                     onClick={() =>
                       handleBlock(
