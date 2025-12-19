@@ -14,6 +14,26 @@ const ManageUsers = () => {
         },
     })
 
+    const handleDeleteUser=async(id)=>{
+        const confirm = await Swal.fire({
+            title: 'Are You Sure to Delete The User?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Yes',
+        })
+
+         if (!confirm.isConfirmed) return
+
+        await axiosSecure.delete(`/admin/users/delete/${id}`)
+         refetch()
+        Swal.fire({
+            title: 'Deleted',
+            text: 'Done',
+            icon: 'success',
+            timer: 2500,
+            showConfirmButton: false
+        })
+    }
 
     const handleRoleChange = async (id, newRole) => {
         const confirm = await Swal.fire({
@@ -33,7 +53,7 @@ const ManageUsers = () => {
         Swal.fire('Updated!', 'User role updated', 'success')
     }
 
-    // block / unblock
+    
     const handleBlock = async (id, status) => {
         const confirm = await Swal.fire({
             title: `Make the User ${status} ?`,
@@ -122,7 +142,9 @@ const ManageUsers = () => {
                                         <FaBan />
                                     </button>
 
-                                    <button className="btn btn-xs btn-error">
+                                    <button
+                                    onClick={()=>handleDeleteUser(user._id)}
+                                     className="btn btn-xs btn-error">
                                         <FaTrash />
                                     </button>
                                 </td>
