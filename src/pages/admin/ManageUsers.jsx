@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
-import useAxiosSecure from '../../hooks/useAxiosSecure'
 import { FaBan, FaTrash } from 'react-icons/fa'
 import Swal from 'sweetalert2'
+import useAxiosSecure from '../../hooks/useAxiosSecure'
 
 const ManageUsers = () => {
   const axiosSecure = useAxiosSecure()
@@ -35,8 +35,9 @@ const ManageUsers = () => {
 
   // block / unblock
   const handleBlock = async (id, status) => {
-    await axiosSecure.patch(`/admin/users/status/${id}`, { status })
-    refetch()
+   await axiosSecure.patch(`/admin/users/status/${id}`, { status })
+//   console.log(data) 
+  refetch()
   }
 
   return (
@@ -69,7 +70,9 @@ const ManageUsers = () => {
                 <td>
                   <select
                     className="select select-bordered select-sm"
-                    value={user.role}
+                    // value={user.role}
+                      defaultValue={user.role}
+
                     onChange={(e) =>
                       handleRoleChange(user._id, e.target.value)
                     }
