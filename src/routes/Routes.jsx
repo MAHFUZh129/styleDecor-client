@@ -21,6 +21,7 @@ import ManageBookings from '../pages/admin/ManageBookings'
 import AdminDashboardOverveiw from '../pages/admin/AdminDashboardOverveiw'
 import ManageDecorators from '../pages/admin/ManageDecorators'
 import ManageServices from '../pages/admin/ManageServices'
+import ManageUsers from '../pages/admin/ManageUsers'
 
 export const router = createBrowserRouter([
   {
@@ -128,6 +129,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <ManageServices />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'manage-users',
+        element: (
+          <PrivateRoute>
+            <ManageUsers />
           </PrivateRoute>
         ),
       },

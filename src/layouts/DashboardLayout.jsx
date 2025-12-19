@@ -1,6 +1,6 @@
 import { Link, NavLink, Outlet } from "react-router";
 import { MdDashboard, MdDesignServices, MdEvent, MdEventNote, MdLogout, MdOutlinePayment } from "react-icons/md";
-import { FaChartPie, FaCoins, FaHome, FaUserCircle } from "react-icons/fa";
+import { FaChartPie, FaCoins, FaHome, FaHospitalUser, FaUserCircle } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import useAuth from "../hooks/useAuth";
 import useRole from "../hooks/useRole";
@@ -88,6 +88,14 @@ const DashboardLayout = () => {
                 <div className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
                   <MdDesignServices />
                   Manage Services
+                </div>
+              </NavLink>
+               <NavLink to="manage-users"
+                className={isActive}
+              >
+                <div className='flex font-semibold items-center gap-3 p-3 rounded-lg'>
+                  <FaHospitalUser />
+                 Manage Users 
                 </div>
               </NavLink>
              
