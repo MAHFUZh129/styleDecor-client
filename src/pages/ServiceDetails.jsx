@@ -111,7 +111,7 @@ const ServiceDetails = () => {
                             <div>
                                 <p className="font-semibold">Service Mode</p>
                                 <div className="flex gap-2 mt-1">
-                                    {serviceMode.map(mode =>
+                                    {serviceMode?.map(mode =>
                                         <span
                                             key={mode}
                                             className="px-3 py-1 text-md rounded-full bg-sky-500/10 font-semibold text-secondary"
