@@ -14,7 +14,7 @@ const ManageUsers = () => {
     },
   })
 
-  // change role from dropdown
+  
   const handleRoleChange = async (id, newRole) => {
     const confirm = await Swal.fire({
       title: `Change role to "${newRole}"?`,
@@ -49,7 +49,7 @@ const ManageUsers = () => {
         <table className="table table-zebra">
           <thead>
             <tr>
-              <th>#</th>
+              <th>Serial No.</th>
               <th>Name</th>
               <th>Email</th>
               <th>Role</th>
@@ -65,7 +65,7 @@ const ManageUsers = () => {
                 <td>{user.name}</td>
                 <td className="break-all">{user.email}</td>
 
-                {/* 🔽 ROLE DROPDOWN */}
+               
                 <td>
                   <select
                     className="select select-bordered select-sm"
@@ -80,7 +80,7 @@ const ManageUsers = () => {
                   </select>
                 </td>
 
-                {/* STATUS */}
+                
                 <td>
                   <span
                     className={`badge ${
@@ -93,7 +93,6 @@ const ManageUsers = () => {
                   </span>
                 </td>
 
-                {/* ACTIONS */}
                 <td className="flex gap-2">
                   <button
                     onClick={() =>
