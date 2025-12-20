@@ -8,19 +8,16 @@
 ---
 
 ## 🚀 Project Purpose
-**StyleDecor** is a full-stack decoration service management system built to simplify event decoration booking and management.  
-It connects **users**, **decorators**, and **admins** in one seamless platform where:
-- Users can book decoration services
-- Decorators can manage assigned projects and track earnings
-- Admins can control services, decorators, and platform revenue
+**StyleDecor** is a modern appointment management system for a local decoration company that offers both in-studio consultations and on-site decoration services for homes and ceremonies. Users can explore decoration packages, check decorator availability, select a date & time, choose a service mode, make payments, and track their service status.
+
 
 This project focuses on **real-world business logic**, **secure role-based access**, and **scalable architecture**.
 
 ---
 
 ## 🌐 Live Website
-🔗 **Live Demo:** https://your-project-live-url.vercel.app  
-*(Replace with your deployed link)*
+🔗 **Live Demo:** https://styledecor-mh.netlify.app/  
+
 
 ---
 
@@ -28,7 +25,7 @@ This project focuses on **real-world business logic**, **secure role-based acces
 
 ### 👤 User Panel
 - Browse decoration services
-- Book decoration packages
+- Book decoration services/packages
 - Track booking status in real-time
 - Firebase authentication (secure login)
 
@@ -73,6 +70,15 @@ This project focuses on **real-world business logic**, **secure role-based acces
 - react-icons
 - tailwindcss
 - daisyui
+- @headlessui/react
+- framer-motion
+- leaflet
+- lucide-react
+- react-hook-form
+- react-hot-toast
+- react-icons
+- react-leaflet
+- react-spinners
 
 ---
 
@@ -80,6 +86,7 @@ This project focuses on **real-world business logic**, **secure role-based acces
 - express
 - cors
 - mongodb
+- stripe
 - dotenv
 - jsonwebtoken
 - firebase-admin
@@ -88,9 +95,10 @@ This project focuses on **real-world business logic**, **secure role-based acces
 
 ## 🧰 Tech Stack
 | Frontend | Backend | Database | Auth | Deployment |
-|--------|--------|---------|------|------------|
+|----------|---------|----------|------|------------|
 | React | Node.js | MongoDB | Firebase | Vercel |
-| Tailwind CSS | Express.js | | JWT | |
+| Tailwind CSS | Express.js |  | JWT | Netlify |
+
 
 ---
 
@@ -101,17 +109,14 @@ This project focuses on **real-world business logic**, **secure role-based acces
 
 ---
 
-## 📸 Screenshots *(Optional)*
-> Add screenshots here to make the project even more impressive.
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Developed By
 **Mahfuz Hossain**  
 Full Stack Web Developer  
 
-- GitHub: https://github.com/your-github-username  
-- LinkedIn: https://www.linkedin.com/in/your-linkedin-profile  
+- GitHub: https://github.com/MAHFUZh129  
 
 ---
 
