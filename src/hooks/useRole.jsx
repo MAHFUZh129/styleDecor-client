@@ -17,6 +17,7 @@ const useRole = () => {
       return result.data.role
     },
   })
+       console.log(role)
 
   return [role, isRoleLoading]
 }

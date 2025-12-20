@@ -19,7 +19,7 @@ const SignUp = () => {
     formState: { errors },
   } = useForm()
 
-  console.log(errors)
+  // console.log(errors)
   const onSubmit = async(data) => {
     const {email,password,image,name} =data
     const imgFile = image[0]
@@ -28,7 +28,7 @@ const SignUp = () => {
     try {
        const imgURL=await imageUpload(imgFile)
       // User Registration
-      const result = await createUser(email, password)
+       await createUser(email, password)
 
        await saveOrUpdateUser({ name, email, image: imgURL })
      
@@ -36,7 +36,6 @@ const SignUp = () => {
       await updateUserProfile(name,imgURL) 
         
       
-      console.log(result)
 
       navigate(from, { replace: true })
       toast.success('Signup Successful')
@@ -47,10 +46,10 @@ const SignUp = () => {
 
   }
 
-  // Handle Google Signin
+  //  Google Signin
   const handleGoogleSignIn = async () => {
     try {
-      //User Registration using google
+      // using google
       const { user } = await signInWithGoogle()
 
       await saveOrUpdateUser({

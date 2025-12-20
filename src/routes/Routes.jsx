@@ -4,9 +4,7 @@ import Login from '../pages/Login/Login'
 import SignUp from '../pages/SignUp/SignUp'
 import PrivateRoute from './PrivateRoute'
 import DashboardLayout from '../layouts/DashboardLayout'
-
 import MainLayout from '../layouts/MainLayout'
-
 import { createBrowserRouter } from 'react-router'
 import ServicesPage from '../pages/ServicesPage'
 import ServiceDetails from '../pages/ServiceDetails'
@@ -185,7 +183,10 @@ export const router = createBrowserRouter([
         path: 'earnigs',
         element: (
           <PrivateRoute>
-            <EarningsSummary/>
+            <DecoratorRoute>
+              <EarningsSummary/>
+            </DecoratorRoute>
+            
           </PrivateRoute>
         ),
       },

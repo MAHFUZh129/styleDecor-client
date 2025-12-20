@@ -59,7 +59,7 @@ const DecoratorDashboardOverveiw = () => {
           <div>
             <p className="text-gray-500 text-sm">Completed</p>
             <h3 className="text-2xl font-bold">
-              {stats.completed || 0}
+              {stats.completedBookings || 0}
             </h3>
           </div>
         </div>
