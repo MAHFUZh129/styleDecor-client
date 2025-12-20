@@ -24,6 +24,9 @@ import ManageServices from '../pages/admin/ManageServices'
 import ManageUsers from '../pages/admin/ManageUsers'
 import DecoratorDashboardOverveiw from '../pages/decorator/DecoratorDashboardOverveiw'
 import MyAssignedProjects from '../pages/decorator/MyAssignedProjects'
+import EarningsSummary from '../pages/decorator/EarningsSummary'
+import AdminRoute from './AdminRoute'
+import DecoratorRoute from './DecoratorRoute'
 
 export const router = createBrowserRouter([
   {
@@ -106,7 +109,9 @@ export const router = createBrowserRouter([
         path: 'manage-bookings',
         element: (
           <PrivateRoute>
-            <ManageBookings />
+            <AdminRoute>
+              <ManageBookings />
+            </AdminRoute>
           </PrivateRoute>
         ),
       },
@@ -114,7 +119,10 @@ export const router = createBrowserRouter([
         path: 'overview',
         element: (
           <PrivateRoute>
-            <AdminDashboardOverveiw />
+            <AdminRoute>
+              <AdminDashboardOverveiw />
+            </AdminRoute>
+            
           </PrivateRoute>
         ),
       },
@@ -122,7 +130,10 @@ export const router = createBrowserRouter([
         path: 'decorator-overview',
         element: (
           <PrivateRoute>
-            <DecoratorDashboardOverveiw />
+            <DecoratorRoute>
+              <DecoratorDashboardOverveiw />
+            </DecoratorRoute>
+            
           </PrivateRoute>
         ),
       },
@@ -130,7 +141,10 @@ export const router = createBrowserRouter([
         path: 'manage-decorators',
         element: (
           <PrivateRoute>
-            <ManageDecorators />
+            <AdminRoute>
+              <ManageDecorators />
+            </AdminRoute>
+            
           </PrivateRoute>
         ),
       },
@@ -138,7 +152,10 @@ export const router = createBrowserRouter([
         path: 'manage-services',
         element: (
           <PrivateRoute>
-            <ManageServices />
+            <AdminRoute>
+              <ManageServices />
+            </AdminRoute>
+            
           </PrivateRoute>
         ),
       },
@@ -146,7 +163,10 @@ export const router = createBrowserRouter([
         path: 'manage-users',
         element: (
           <PrivateRoute>
-            <ManageUsers />
+            <AdminRoute>
+              <ManageUsers />
+            </AdminRoute>
+            
           </PrivateRoute>
         ),
       },
@@ -154,7 +174,18 @@ export const router = createBrowserRouter([
         path: 'my-projects',
         element: (
           <PrivateRoute>
-            <MyAssignedProjects />
+            <DecoratorRoute>
+              <MyAssignedProjects />
+            </DecoratorRoute>
+            
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'earnigs',
+        element: (
+          <PrivateRoute>
+            <EarningsSummary/>
           </PrivateRoute>
         ),
       },

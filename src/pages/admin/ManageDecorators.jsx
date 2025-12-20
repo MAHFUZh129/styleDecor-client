@@ -88,7 +88,7 @@ const ManageDecorators = () => {
 
   return (
     <div className="w-full">
-      {/* 🔹 Header */}
+      {/*  Header */}
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold">
           Manage Decorators ({decorators.length})
@@ -102,7 +102,7 @@ const ManageDecorators = () => {
         </button>
       </div>
 
-      {/* 🔹 Table */}
+      {/*  Table */}
       <div className="overflow-x-auto bg-white rounded-lg shadow">
         <table className="table table-zebra w-full text-sm">
           <thead className="bg-gray-100">
@@ -175,7 +175,7 @@ const ManageDecorators = () => {
         </table>
       </div>
 
-      {/* 🔹 Add Decorator Modal */}
+      {/*  Add Decorator */}
       {openModal && (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
           <div className="bg-white w-full max-w-md rounded-lg p-6">

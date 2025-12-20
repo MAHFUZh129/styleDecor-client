@@ -25,7 +25,7 @@ const DashboardLayout = () => {
           <h2 className="text-2xl font-bold text-primary">StyleDecor</h2>
           <p className="text-sm text-gray-500">Dashboard</p>
           <Link className="flex text-lg text-amber-700 font-bold mt-2 pl-2 hover:bg-primary/10 items-center gap-2" to='/'>
-            <FaHome />decorator
+            <FaHome />
             Home
           </Link>
 

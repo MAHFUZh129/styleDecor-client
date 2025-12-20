@@ -1,4 +1,4 @@
-import { useParams } from 'react-router';
+import { Link, useLocation, useParams } from 'react-router';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { useState } from 'react';
@@ -6,13 +6,14 @@ import LoadingSpinner from '../components/shared/LoadingSpinner';
 import useAuth from '../hooks/useAuth';
 import BookingModal from '../components/modal/BookingModal';
 import { Star } from 'lucide-react';
+import { TbCurrencyTaka } from 'react-icons/tb';
 
 
 const ServiceDetails = () => {
     const { id } = useParams();
     const { user } = useAuth();
     const [openModal, setOpenModal] = useState(false);
-
+const location = useLocation()
 
     const { data: service, isLoading } = useQuery({
         queryKey: ['service', id],
@@ -70,8 +71,8 @@ const ServiceDetails = () => {
                             </div>
 
                             {/* Price */}
-                            <div className="text-3xl font-bold text-primary">
-                                ৳ {price}
+                            <div className="flex items-center text-3xl font-bold text-primary">
+                              <TbCurrencyTaka /> {price}
                             </div>
 
                             {/* CTA */}
@@ -83,9 +84,11 @@ const ServiceDetails = () => {
                                     Book Now
                                 </button>
                             ) : (
-                                <p className="text-red-500 font-medium">
-                                    Login to book this service
-                                </p>
+                               <Link state={location.pathname} to='/login'
+                                    className="px-10 py-4 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold shadow-lg hover:scale-105 transition"
+                                >
+                                    Book Now
+                                </Link>
                             )}
                         </div>
                     </div>
