@@ -16,7 +16,7 @@ This project focuses on **real-world business logic**, **secure role-based acces
 ---
 
 ## 🌐 Live Website
-🔗 **Live Demo:** https://styledecor-mh.netlify.app/  
+🔗 **Live Demo:** https://styledecor-mh.netlify.app  
 
 
 ---
