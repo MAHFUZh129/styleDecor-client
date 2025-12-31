@@ -110,6 +110,42 @@ This project focuses on **real-world business logic**, **secure role-based acces
 ---
 
 
+## 🚀 How to Run This Project Locally
+
+Follow the steps below to run the project on your local machine:
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/MAHFUZh129/Krishi_Link_Client.git
+```
+
+### 2️⃣ Go to the project directory
+```bash
+cd your-repository
+```
+
+### 3️⃣ Install dependencies
+```bash
+npm install
+```
+
+### 4️⃣ Start the development server
+If this is a React/Vite project:
+```bash
+npm run dev
+```
+
+If this is a Node/Express backend:
+```bash
+npm start
+```
+
+### 5️⃣ Open in browser
+```
+http://localhost:5173           # For Vite/React
+http://localhost:3000 or 5000   # For Node/Express
+```
+
 ---
 
 ## 👨‍💻 Developed By
