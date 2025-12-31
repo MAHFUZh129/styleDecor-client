@@ -116,7 +116,7 @@ Follow the steps below to run the project on your local machine:
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/MAHFUZh129/Krishi_Link_Client.git
+git clone https://github.com/MAHFUZh129/styleDecor-client.git
 ```
 
 ### 2️⃣ Go to the project directory
@@ -137,13 +137,13 @@ npm run dev
 
 If this is a Node/Express backend:
 ```bash
-npm start
+npm run dev
 ```
 
 ### 5️⃣ Open in browser
 ```
-http://localhost:5173           # For Vite/React
-http://localhost:3000 or 5000   # For Node/Express
+http://localhost:5173   # For Vite/React
+http://localhost:3000   # For Node/Express
 ```
 
 ---
