@@ -1,3 +1,4 @@
+import { Link2 } from "lucide-react";
 import {
   FaFacebookF,
   FaInstagram,
@@ -12,7 +13,7 @@ import { Link } from "react-router";
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-r from-gray-900 via-black to-gray-900 text-gray-300">
-      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-12">
 
         {/* Brand & Contact */}
         <div>
@@ -40,13 +41,36 @@ const Footer = () => {
             </p>
           </div>
         </div>
-
-        {/* Working Hours */}
+        {/* links*/}
+        <div>
+          <h3 className="text-xl font-semibold text-white mb-5">
+            Quick Links
+          </h3>
+           <div className="space-y-3 text-gray-400">
+            <Link to={'/'} className="flex items-center hover:text-primary  gap-3">
+              Home 
+            </Link>
+            <Link to={'/services'} className="flex items-center hover:text-primary  gap-3">
+              Services
+            </Link>
+            <Link to={'/about'} className="flex items-center hover:text-primary  gap-3">
+              About Us
+            </Link>
+            <Link to={'/contact'} className="flex items-center hover:text-primary  gap-3">
+              Contact
+            </Link>
+            <p className="flex items-center hover:text-primary  gap-3">
+              
+              FAQ
+            </p>
+          </div>
+          
+        </div>
+        {/* working hours */}
         <div>
           <h3 className="text-xl font-semibold text-white mb-5">
             Business Hours
           </h3>
-
           <div className="space-y-3 text-gray-400">
             <p className="flex items-center gap-3">
               <FaClock className="text-primary" />
@@ -57,6 +81,8 @@ const Footer = () => {
               Friday: Closed
             </p>
           </div>
+
+         
         </div>
 
         {/* Social Media */}
