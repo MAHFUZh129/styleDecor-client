@@ -1,16 +1,167 @@
-# React + Vite
+# 🎨 StyleDecor  
+### A Modern Decoration Service Management Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <b>Plan • Decorate • Celebrate</b>
+</p>
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Project Purpose
+**StyleDecor** is a modern appointment management system for a local decoration company that offers both in-studio consultations and on-site decoration services for homes and ceremonies. Users can explore decoration packages, check decorator availability, select a date & time, choose a service mode, make payments, and track their service status.
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project focuses on **real-world business logic**, **secure role-based access**, and **scalable architecture**.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🌐 Live Website
+🔗 **Live Demo:** https://styledecor-mh.netlify.app  
+
+
+---
+
+## ✨ Key Features
+
+### 👤 User Panel
+- Browse decoration services
+- Book decoration services/packages
+- Track booking status in real-time
+- Firebase authentication (secure login)
+
+---
+
+### 🎨 Decorator Dashboard
+- Overview of assigned, ongoing, and completed projects
+- Update project status (Assigned → Ongoing → Completed)
+- Earnings summary (💰 **70% share**)
+- Secure decorator-only access
+
+---
+
+### 🛠️ Admin Dashboard
+- Manage all services
+- Enable / disable decorators
+- Monitor total bookings, services, and decorators
+- Revenue overview (💼 **30% admin share**)
+- Platform-wide analytics
+
+---
+
+### 🔐 Core System Features
+- Role-based dashboard (User / Decorator / Admin)
+- JWT-secured backend APIs
+- Axios secure requests with interceptors
+- Backend-calculated earnings (no frontend manipulation)
+- Fully responsive UI (Mobile / Tablet / Desktop)
+
+---
+
+## 📦 NPM Packages Used
+
+### 🎯 Frontend
+- react
+- react-dom
+- react-router-dom
+- @tanstack/react-query
+- axios
+- firebase
+- sweetalert2
+- react-icons
+- tailwindcss
+- daisyui
+- @headlessui/react
+- framer-motion
+- leaflet
+- lucide-react
+- react-hook-form
+- react-hot-toast
+- react-icons
+- react-leaflet
+- react-spinners
+
+---
+
+### ⚙️ Backend
+- express
+- cors
+- mongodb
+- stripe
+- dotenv
+- jsonwebtoken
+- firebase-admin
+
+---
+
+## 🧰 Tech Stack
+| Frontend | Backend | Database | Auth | Deployment |
+|----------|---------|----------|------|------------|
+| React | Node.js | MongoDB | Firebase | Vercel |
+| Tailwind CSS | Express.js |  | JWT | Netlify |
+
+
+---
+
+## 💰 Revenue Distribution Logic
+- 🎨 Decorator receives **70%** of service price
+- 🛠️ Admin receives **30%** of service price
+- All calculations are handled securely on the backend
+
+---
+
+
+## 🚀 How to Run This Project Locally
+
+Follow the steps below to run the project on your local machine:
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/MAHFUZh129/styleDecor-client.git
+```
+
+### 2️⃣ Go to the project directory
+```bash
+cd your-repository
+```
+
+### 3️⃣ Install dependencies
+```bash
+npm install
+```
+
+### 4️⃣ Start the development server
+If this is a React/Vite project:
+```bash
+npm run dev
+```
+
+If this is a Node/Express backend:
+```bash
+npm run dev
+```
+
+### 5️⃣ Open in browser
+```
+http://localhost:5173   # For Vite/React
+http://localhost:3000   # For Node/Express
+```
+
+---
+
+## 👨‍💻 Developed By
+**Mahfuz Hossain**  
+Full Stack Web Developer  
+
+- GitHub: https://github.com/MAHFUZh129  
+
+---
+
+## ⭐ Final Note
+This project demonstrates:
+- Real-world dashboard architecture
+- Secure authentication & authorization
+- Clean backend business logic
+- Scalable full-stack development practices
+
+Feel free to explore, fork, and provide feedback!
+
