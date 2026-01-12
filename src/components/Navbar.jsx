@@ -52,7 +52,7 @@ const Navbar = () => {
               <span className="text-2xl font-black tracking-tighter bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] hover:bg-right transition-all duration-500 bg-clip-text text-transparent italic">
                 Style
               </span>
-              <span className="text-2xl font-black italic text-gray-800">Decor</span>
+              <span className="text-3xl font-black italic text-gray-800">Decor</span>
             </div>
           </Link>
         </div>

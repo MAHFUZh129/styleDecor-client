@@ -17,11 +17,19 @@ const Footer = () => {
 
         {/* Brand & Contact */}
         <div>
-          <h2 className="text-3xl font-extrabold text-white mb-4">
-            Style<span className="text-primary">Decor</span>
-            
-          </h2>
-          <p className="mb-6 text-gray-400">
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="w-10 h-10 bg-primary rounded-xl rotate-3 group-hover:rotate-12  transition-transform duration-300 flex items-center justify-center shadow-lg shadow-primary/30">
+              <span className="text-white font-black text-2xl italic">S</span>
+            </div>
+            <div className="hidden sm:block">
+              <span className="text-2xl font-black  tracking-tighter bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] hover:bg-right transition-all duration-500 bg-clip-text text-transparent italic">
+                Style
+              </span>
+              <span className="text-3xl font-black italic text-primary">Decor</span>
+            </div>
+          </Link>
+          
+          <p className="mb-6 mt-4 text-gray-400">
             Elevating homes & ceremonies with elegant, modern decoration
             services and seamless booking experiences.
           </p>

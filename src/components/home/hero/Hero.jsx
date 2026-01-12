@@ -71,8 +71,8 @@ const Hero = () => {
                   <FiCheckCircle size={20} />
                 </div>
                 <div>
-                  <p className="text-[10px] text-slate-400 font-bold uppercase">Verified</p>
-                  <p className="text-sm font-bold text-slate-800">Top-Rated Decorators</p>
+                  <p className="text-[14px] text-secondary font-bold uppercase">Verified</p>
+                  <p className="text-md font-bold text-primary">Top-Rated Decorators</p>
                 </div>
               </div>
             </motion.div>

@@ -3,6 +3,7 @@ import axios from 'axios';
 import ServiceCard from './ServiceCard';
 import LoadingSpinner from '../../shared/LoadingSpinner';
 import { Link } from 'react-router';
+import LoadingSkeleton from '../../shared/LoadingScheleton';
 
 const Services = () => {
   const { data: services = [], isLoading } = useQuery({
@@ -15,7 +16,7 @@ const Services = () => {
     },
   });
 
-  if (isLoading) return <LoadingSpinner />;
+  if (isLoading) return <LoadingSkeleton></LoadingSkeleton>;
 
   return (
     <div className="
@@ -51,8 +52,8 @@ const Services = () => {
           grid
           grid-cols-1
           sm:grid-cols-2
-          lg:grid-cols-3
-          gap-8
+          lg:grid-cols-4
+          gap-3
         ">
           {services.map(service => (
             <ServiceCard key={service._id} service={service} />
