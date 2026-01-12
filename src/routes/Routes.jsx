@@ -25,6 +25,7 @@ import MyAssignedProjects from '../pages/decorator/MyAssignedProjects'
 import EarningsSummary from '../pages/decorator/EarningsSummary'
 import AdminRoute from './AdminRoute'
 import DecoratorRoute from './DecoratorRoute'
+import Blog from '../pages/Blog'
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
       {
         path: '/about',
         element: <About />
+      },
+      {
+        path: '/blog',
+        element: <Blog />
       },
       {
         path: '/contact',

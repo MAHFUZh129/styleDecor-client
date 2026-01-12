@@ -4,6 +4,8 @@ import axios from "axios";
 import ServiceCard from "../components/home/services/ServiceCard";
 import LoadingSkeleton from "../components/shared/LoadingScheleton";
 
+import { FaSearch } from "react-icons/fa";
+
 const ServicesPage = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
@@ -66,14 +68,19 @@ const ServicesPage = () => {
 
         {/* Filters */}
         <div className="mb-14 rounded-3xl bg-white/70 backdrop-blur-md shadow-xl border border-white/40 p-6 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          
-          <input
+          <div className="flex items-center gap-2">
+            <FaSearch className="text-primary p-" size={22} />
+
+
+            <input
             type="text"
-            placeholder="Search service..."
+            placeholder="Search Services....."
             className="input input-bordered w-full focus:border-primary"
             value={search}
             onChange={e => setSearch(e.target.value)}
           />
+          </div>
+          
 
           <select
             className="select select-bordered w-full focus:border-primary"

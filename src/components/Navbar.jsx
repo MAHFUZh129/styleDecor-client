@@ -1,5 +1,5 @@
 import { NavLink, Link } from "react-router";
-import { FaUserCircle, FaBars } from "react-icons/fa";
+import { FaUserCircle, FaBars, FaBlogger } from "react-icons/fa";
 import { MdAccountCircle, MdDashboard, MdLogin, MdPersonAddAlt } from "react-icons/md";
 import { FiLogOut, FiChevronDown, FiPhoneCall } from "react-icons/fi";
 import useAuth from "../hooks/useAuth";
@@ -12,14 +12,13 @@ const Navbar = () => {
   const { user, logOut } = useAuth();
 
   const navLinkClass = ({ isActive }) =>
-    `relative flex items-center gap-1.5  px-2 py-1.5 rounded-md transition-all duration-300 group ${
-      isActive ? " bg-primary  text-white font-semibold" : "text-black hover:text-primary"
+    `relative flex items-center gap-1.5  px-2 py-1.5 rounded-md transition-all duration-300 group ${isActive ? " bg-primary  text-white font-semibold" : "text-black hover:text-primary"
     }`;
 
   return (
     <div className="sticky top-0 z-50 w-full bg-blue-50 backdrop-blur-xl border-b border-white/20 shadow-sm">
       <div className="navbar max-w-7xl mx-auto px-4 lg:px-8 h-20" >
-        
+
         {/*logo and mobile links*/}
         <div className="navbar-start">
           <div className="dropdown lg:hidden">
@@ -34,6 +33,8 @@ const Navbar = () => {
               <li ><NavLink className='font-semibold text-[14px] ' to="/"><IoHomeOutline /> Home</NavLink></li>
               <li><NavLink className='font-semibold text-[14px] ' to="/services"><GiFlowerPot /> Services</NavLink></li>
               <li><NavLink className='font-semibold text-[14px] ' to="/about"><AiOutlineInfoCircle /> About</NavLink></li>
+              <li><NavLink className='font-semibold text-[14px] ' to="/about"><FaBlogger size={18} />
+                Blogs</NavLink></li>
               <li><NavLink className='font-semibold text-[14px] ' to="/contact"><FiPhoneCall /> Contact</NavLink></li>
               {user && (
                 <>
@@ -62,22 +63,30 @@ const Navbar = () => {
           <ul className="flex items-center gap-3 font-semibold  text-[15px]">
             <li>
               <NavLink to="/" className={navLinkClass}>
-              <IoHomeOutline size={18} />
+                <IoHomeOutline size={18} />
                 Home
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </NavLink>
             </li>
             <li>
               <NavLink to="/services" className={navLinkClass}>
-              <GiFlowerPot size={18} />
+                <GiFlowerPot size={18} />
 
                 Services
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </NavLink>
             </li>
             <li>
+              <NavLink to="/blog" className={navLinkClass}>
+                <FaBlogger size={18} />
+
+                Blogs
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+              </NavLink>
+            </li>
+            <li>
               <NavLink to="/about" className={navLinkClass}>
-              <AiOutlineInfoCircle size={18} />
+                <AiOutlineInfoCircle size={18} />
                 About
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </NavLink>
@@ -88,7 +97,7 @@ const Navbar = () => {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </NavLink>
             </li>
-            {user &&<li>
+            {user && <li>
               <NavLink to="/dashboard" className={navLinkClass}><MdDashboard size={18} />
                 Dashboard
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
@@ -101,20 +110,20 @@ const Navbar = () => {
         <div className="navbar-end gap-3">
           {!user ? (
             <div className=" flex items-center gap-3">
-             
-              
+
+
               <Link
                 to="/signup"
                 className="btn btn-secondary  btn-sm md:btn-md rounded-full px-3 shadow-lg shadow-primary/25 border-none hover:scale-105 active:scale-95 transition-all"
               ><MdLogin size={18} />
-              
-               Sign In
+
+                Sign In
               </Link>
               <Link
                 to="/signup"
                 className="btn btn-primary btn-sm md:btn-md rounded-full px-3 shadow-lg shadow-primary/25 border-none hover:scale-105 active:scale-95 transition-all"
-              > <MdPersonAddAlt  size={18} />
-               Sign Up
+              > <MdPersonAddAlt size={18} />
+                Sign Up
               </Link>
             </div>
           ) : (
@@ -141,7 +150,7 @@ const Navbar = () => {
               >
                 <div className="px-4 py-3 border-b border-gray-50 mb-2">
                   <p className="text-[14px] flex items-center gap-2 text-gray-800 border-b-2 border-dotted pb-2 font-semibold uppercase tracking-wider"><MdAccountCircle className="text-secondary" size={22} />
- Account</p>
+                    Account</p>
                   <p className="text-sm font-bold text-gray-800 mt-2 truncate ">{user?.displayName || "User"}</p>
                 </div>
 

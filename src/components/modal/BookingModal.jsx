@@ -55,19 +55,19 @@ const BookingModal = ({closeModal,openModal,service}) => {
                                 Review Info Before Booking
                             </DialogTitle>
                             <div className='mt-2'>
-                                <p className='text-md text-green-800'>Service: {service.name} </p>
+                                <p className='text-md font-semibold text-gray-600'>Service: {service.name} </p>
                             </div>
                             <div className='mt-2'>
-                                <p className='text-md text-green-800'>Category: {service.category} </p>
+                                <p className='text-md font-semibold text-gray-600'>Category: {service.category} </p>
                             </div>
                             <div className='mt-2'>
-                                <p className='text-md text-green-800'>
+                                <p className='text-md font-semibold text-gray-600'>
                                     Ratings: {service.rating}
                                 </p>
                             </div>
 
                             <div className='mt-2'>
-                                <p className='text-md text-green-800'>Price: {service.price} Taka </p>
+                                <p className='text-md font-semibold text-gray-600'>Price: {service.price} Taka </p>
                             </div>
 
                             <div className='flex mt-2 justify-around'>

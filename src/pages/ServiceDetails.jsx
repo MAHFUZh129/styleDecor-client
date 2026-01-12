@@ -51,7 +51,7 @@ const location = useLocation()
                         />
 
                         <div className="space-y-6">
-                            <span className="inline-block px-4 py-1 rounded-full text-sm font-semibold bg-primary/10 text-primary">
+                            <span className="inline-block px-4 py-1 rounded-full text-lg font-semibold bg-primary/10 text-primary">
                                 {category}
                             </span>
 
@@ -59,7 +59,7 @@ const location = useLocation()
                                 {name}
                             </h1>
 
-                            <p className="text-amber-600 text-md">
+                            <p className="text-secondary text-[16px] font-bold">
                                 {shortDescription}
                             </p>
 
@@ -79,13 +79,13 @@ const location = useLocation()
                             {user ? (
                                 <button
                                     onClick={() => setOpenModal(true)}
-                                    className="px-10 py-4 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold shadow-lg hover:scale-105 transition"
+                                    className="px-10 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold shadow-lg hover:scale-105 transition"
                                 >
                                     Book Now
                                 </button>
                             ) : (
                                <Link state={location.pathname} to='/login'
-                                    className="px-10 py-4 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold shadow-lg hover:scale-105 transition"
+                                    className="px-10 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-semibold shadow-lg hover:scale-105 transition"
                                 >
                                     Book Now
                                 </Link>
@@ -98,7 +98,7 @@ const location = useLocation()
 
                         <div className="md:col-span-2 bg-white rounded-3xl p-8 shadow-lg">
                             <h2 className="text-2xl font-bold mb-4">Service Description</h2>
-                            <p className="text-amber-700 leading-relaxed">
+                            <p className="text-gray-800 leading-relaxed">
                                 {description}
                             </p>
                         </div>
