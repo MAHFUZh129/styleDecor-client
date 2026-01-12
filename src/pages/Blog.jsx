@@ -7,15 +7,16 @@ const blogs = [
     title: "Top Wedding Decoration Trends in 2025",
     category: "Wedding",
     date: "Jan 12, 2025",
-    image: "https://i.ibb.co/jV9XnVg/wedding-decor.jpg",
+    image: 'https://i.ibb.co.com/Y4PQqqhH/image.png',
     excerpt: "Explore modern floral stages, pastel palettes, and luxury lighting ideas for weddings.",
   },
+ 
   {
     id: 2,
     title: "Birthday Party Decoration Ideas for All Ages",
     category: "Birthday",
     date: "Jan 22, 2025",
-    image: "https://i.ibb.co/6szzZyJ/birthday-decor.jpg",
+    image: 'https://i.ibb.co.com/9HYNFHNJ/image.png',
     excerpt: "Fun, colorful, and creative birthday decoration themes for kids and adults.",
   },
   {
@@ -23,7 +24,7 @@ const blogs = [
     title: "Corporate Event Decor That Builds Brand Image",
     category: "Corporate",
     date: "Feb 01, 2025",
-    image: "https://i.ibb.co/xFfQpwm/corporate-decor.jpg",
+    image: "https://i.ibb.co.com/39fnNJjX/image.png",
     excerpt: "Professional setups designed to elevate brand presence and corporate identity.",
   },
   {
@@ -31,7 +32,7 @@ const blogs = [
     title: "Simple Home Decor Ideas for Festivals",
     category: "Home Decor",
     date: "Feb 10, 2025",
-    image: "https://i.ibb.co/n7xFv0g/home-decor.jpg",
+    image: "https://i.ibb.co.com/gxn01sG/image.png",
     excerpt: "Minimal yet elegant decoration ideas to beautify your home during festivals.",
   },
   {
@@ -39,7 +40,7 @@ const blogs = [
     title: "How to Choose the Right Decor Theme",
     category: "Event Tips",
     date: "Feb 18, 2025",
-    image: "https://i.ibb.co/ZH7Rzzk/event-decor.jpg",
+    image: "https://i.ibb.co.com/wDVTjQq/image.png",
     excerpt: "Learn how to pick decor themes based on venue, budget, and event type.",
   },
   {
@@ -47,7 +48,7 @@ const blogs = [
     title: "Outdoor Event Decoration: What You Should Know",
     category: "Outdoor",
     date: "Feb 26, 2025",
-    image: "https://i.ibb.co/7p0L6Kp/outdoor-decor.jpg",
+    image: "https://i.ibb.co.com/mCJnSgYk/image.png",
     excerpt: "Tips and ideas for weather-friendly outdoor decoration planning.",
   },
   {
@@ -55,15 +56,16 @@ const blogs = [
     title: "Floral Decoration Ideas That Never Go Out of Style",
     category: "Floral",
     date: "Mar 04, 2025",
-    image: "https://i.ibb.co/svQ5X6H/floral-decor.jpg",
+    image: "https://i.ibb.co.com/8L8RJ66k/image.png",
     excerpt: "Timeless floral decoration styles suitable for weddings and events.",
   },
+ 
   {
     id: 8,
     title: "Lighting Ideas to Transform Your Event Space",
     category: "Lighting",
     date: "Mar 12, 2025",
-    image: "https://i.ibb.co/yfXLkzB/event-lighting.jpg",
+    image: "https://i.ibb.co.com/qYYwhrRT/image.png",
     excerpt: "Use ambient, fairy, and spotlight lighting to create magical experiences.",
   },
   {
@@ -71,7 +73,7 @@ const blogs = [
     title: "Budget-Friendly Decor Ideas That Look Premium",
     category: "Budget",
     date: "Mar 20, 2025",
-    image: "https://i.ibb.co/QD3J4Yw/budget-decor.jpg",
+    image: 'https://i.ibb.co.com/NnxsqL1v/image.png',
     excerpt: "Affordable decoration ideas that deliver a premium look without overspending.",
   },
 ];

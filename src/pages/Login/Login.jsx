@@ -5,6 +5,7 @@ import { FcGoogle } from 'react-icons/fc'
 import { TbFidgetSpinner } from 'react-icons/tb'
 import LoadingSpinner from '../../components/shared/LoadingSpinner'
 import { saveOrUpdateUser } from '../../../utils'
+import { FaCheckCircle } from 'react-icons/fa'
 
 const Login = () => {
   const { signIn, signInWithGoogle, loading, user, setLoading } = useAuth()
@@ -64,104 +65,127 @@ const Login = () => {
     }
   }
   return (
-    
-    <div className='flex bg-gradient-to-br from-primary/20 via-secondary/20 to-pink-100
- from-primary/20 via-secondary/20 to-pink-100
- justify-center items-center min-h-screen bg-white'>
-      <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
-        <div className='mb-8 text-center'>
-          <h1 className='my-3 text-4xl font-bold'>Log In</h1>
-          <p className='text-sm text-gray-400'>
-            Sign in to access your account
+  <div className="min-h-screen grid lg:grid-cols-2 bg-gradient-to-br from-rose-100 via-pink-100 to-purple-200">
+
+    {/* left side */}
+    <div className="hidden lg:flex flex-col justify-center px-16 text-gray-800 relative">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1529634897479-77f8b7c1acc1')] bg-cover bg-center opacity-20"></div>
+
+      <div className="relative z-10">
+        <h1 className="text-5xl font-extrabold leading-tight mb-6">
+          Design Your <br />
+          <span className="text-primary">Dream Events</span>
+        </h1>
+
+        <p className="text-lg text-gray-700 max-w-md mb-8">
+          From luxury weddings to elegant celebrations, Style Decor turns your
+          moments into unforgettable experiences.
+        </p>
+
+        <ul className="space-y-3 text-gray-700">
+          <li className='flex gap-2 items-center'> <FaCheckCircle className="text-primary" /> Premium Wedding Decoration</li>
+          <li className='flex gap-2 items-center'> <FaCheckCircle className="text-primary" /> Birthday & Engagement Setup</li>
+          <li className='flex gap-2 items-center'> <FaCheckCircle className="text-primary" /> Corporate & Cultural Events</li>
+          <li className='flex gap-2 items-center'> <FaCheckCircle className="text-primary" /> Custom Floral & Stage Design</li>
+        </ul>
+      </div>
+    </div>
+
+    {/* right-login */}
+    <div className="flex items-center justify-center px-4">
+      <div className="w-full max-w-md bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8">
+
+        {/* header */}
+        <div className="text-center mb-8">
+          <h2 className="text-4xl font-bold text-secondary mb-2">
+            Welcome Back 
+          </h2>
+          <p className="text-gray-500 text-sm">
+            Login to manage your bookings & decorations
           </p>
         </div>
-        <form
-          onSubmit={handleSubmit}
-          noValidate=''
-          action=''
-          className='space-y-6 ng-untouched ng-pristine ng-valid'
-        >
-          <div className='space-y-4'>
-            <div>
-              <label htmlFor='email' className='block mb-2 text-sm'>
-                Email address
-              </label>
-              <input
-                type='email'
-                name='email'
-                id='email'
-                required
-                placeholder='Enter Your Email Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-primary bg-gray-200 text-gray-900'
-                data-temp-mail-org='0'
-              />
-            </div>
-            <div>
-              <div className='flex justify-between'>
-                <label htmlFor='password' className='text-sm mb-2'>
-                  Password
-                </label>
-              </div>
-              <input
-                type='password'
-                name='password'
-                autoComplete='current-password'
-                id='password'
-                required
-                placeholder='*******'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-primary bg-gray-200 text-gray-900'
-              />
-            </div>
+
+        {/* form */}
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div>
+            <label className="text-sm font-medium text-gray-600">
+              Email Address
+            </label>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="you@example.com"
+              className="mt-1 w-full px-4 py-3 rounded-xl bg-gray-100 border border-gray-300 focus:ring-2 focus:ring-primary/40 outline-none"
+            />
           </div>
 
           <div>
-            <button
-              type='submit'
-              className='bg-primary hover:bg-primary/90
- w-full rounded-md py-3 text-white'
-            >
-              {loading ? (
-                <TbFidgetSpinner className='animate-spin m-auto' />
-              ) : (
-                'Continue'
-              )}
-            </button>
+            <label className="text-sm font-medium text-gray-600">
+              Password
+            </label>
+            <input
+              type="password"
+              name="password"
+              required
+              placeholder="••••••••"
+              className="mt-1 w-full px-4 py-3 rounded-xl bg-gray-100 border border-gray-300 focus:ring-2 focus:ring-primary/40 outline-none"
+            />
           </div>
+
+          <button
+            type="submit"
+            className="w-full py-3 rounded-xl bg-primary text-white font-semibold hover:scale-[1.02] hover:shadow-lg transition flex justify-center"
+          >
+            {loading ? (
+              <TbFidgetSpinner className="animate-spin text-xl" />
+            ) : (
+              "Login "
+            )}
+          </button>
         </form>
-        <div className='space-y-1'>
-          <button className='text-xs hover:underline hover:text-primary text-gray-400 cursor-pointer'>
+
+        {/* extra actions */}
+        <div className="flex justify-between mt-4 text-sm">
+          <button className="text-gray-500 hover:text-primary">
             Forgot password?
           </button>
         </div>
-        <div className='flex items-center pt-4 space-x-1'>
-          <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
-          <p className='px-3 text-sm dark:text-gray-400'>
-            Login with social accounts
-          </p>
-          <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
+
+        {/* divider */}
+        <div className="flex items-center my-6">
+          <div className="flex-1 h-px bg-gray-300"></div>
+          <span className="px-3 text-gray-400 text-sm">or</span>
+          <div className="flex-1 h-px bg-gray-300"></div>
         </div>
+
+        {/* google */}
         <div
           onClick={handleGoogleSignIn}
-          className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'
+          className="flex items-center justify-center gap-3 border border-gray-300 rounded-xl py-3 cursor-pointer hover:bg-gray-100 transition"
         >
-          <FcGoogle size={32} />
-
-          <p>Continue with Google</p>
+          <FcGoogle size={26} />
+          <span className="font-medium text-gray-700">
+            Continue with Google
+          </span>
         </div>
-        <p className='px-6 text-sm text-center text-gray-400'>
-          Don&apos;t have an account yet?{' '}
+
+        {/* footer */}
+        <p className="text-center text-sm text-gray-500 mt-6">
+          New to Style Decor?{" "}
           <Link
+            to="/signup"
             state={from}
-            to='/signup'
-            className='hover:underline hover:text-primary text-gray-600'
+            className="text-primary font-semibold hover:underline"
           >
-            Sign up
+            Create an account
           </Link>
-          .
         </p>
       </div>
     </div>
-  )
+  </div>
+)
+
 }
 
 export default Login
